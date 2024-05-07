@@ -8,10 +8,14 @@ SplashScreen.preventAutoHideAsync()
 export default function App(): ReactElement {
   useEffect(() => {
     async function prepare() {
-      await SplashScreen.hideAsync();
+      SplashScreen.hideAsync();
     }
 
     setTimeout(() => prepare(), 4000);
+    setTimeout(() => prepare(), 8000);
+    setTimeout(() => prepare(), 12000);
+    setTimeout(() => prepare(), 16000);
+    setTimeout(() => prepare(), 20000);
   }, []);
 
   return (
