@@ -11,7 +11,7 @@ export default function App(): ReactElement {
       await SplashScreen.hideAsync();
     }
 
-    prepare();
+    setTimeout(() => prepare(), 4000);
   }, []);
 
   return (
