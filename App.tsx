@@ -1,8 +1,19 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync()
 
 export default function App(): ReactElement {
+  useEffect(() => {
+    async function prepare() {
+      await SplashScreen.hideAsync();
+    }
+
+    prepare();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
